@@ -41,19 +41,19 @@ const movieSchema = new mongoose.Schema({
     match: /https?:\/\/(www.)?[a-z0-9\-\._~:\/?#\[\]@!$&'\(\)*\+,;=]+.[a-z0-9\/]/i,
   },
   owner: {
-    type: Number,
+    type: String,
     required: true,
   },
   movieId: {
-    type: Number,
+    type: String,
     required: true,
   },
   nameRu: {
-    type: Number,
+    type: String,
     required: true,
   },
   nameEn: {
-    type: Number,
+    type: String,
     required: true,
   },
 }, { versionKey: false });
