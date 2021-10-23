@@ -8,10 +8,11 @@
     "celebrate": "^15.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-rate-limit": "^5.5.0",
     "express-winston": "^4.1.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.3",
+    "mongoose": "^5.13.12",
     "validator": "^13.6.0",
     "winston": "^3.3.3"
   },
@@ -32,7 +33,10 @@
     "type": "git",
     "url": "git+https://github.com/Ihomeeer/movies-explorer-api.git"
   },
-  "keywords": ["Страдания", "Боль"],
+  "keywords": [
+    "Страдания",
+    "Боль"
+  ],
   "author": "Mikhail Kirichkov",
   "bugs": {
     "url": "https://github.com/Ihomeeer/movies-explorer-api/issues"

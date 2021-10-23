@@ -9,7 +9,7 @@ const errorCodes = {
   FORBIDDEN: 403,
 };
 
-// Получить все фильмы
+// Получить все фильмы из сохраненок
 const getAllMovies = (req, res, next) => {
   Movie.find({})
     .then((movies) => res.status(200).send({ data: movies }))
@@ -18,7 +18,7 @@ const getAllMovies = (req, res, next) => {
     });
 };
 
-// Создать карточку с фильмом
+// Создать карточку с фильмом в сохраненках
 const createMovie = (req, res, next) => {
   const {
     country,
@@ -28,9 +28,9 @@ const createMovie = (req, res, next) => {
     description,
     image,
     trailer,
-    nameRU,
-    nameEN,
     thumbnail,
+    nameRu,
+    nameEn,
     movieId,
   } = req.body;
   const owner = req.user._id;
@@ -42,9 +42,9 @@ const createMovie = (req, res, next) => {
     description,
     image,
     trailer,
-    nameRU,
-    nameEN,
     thumbnail,
+    nameRu,
+    nameEn,
     movieId,
     owner,
   })

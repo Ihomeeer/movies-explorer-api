@@ -40,7 +40,11 @@ const movieSchema = new mongoose.Schema({
     // eslint-disable-next-line
     match: /https?:\/\/(www.)?[a-z0-9\-\._~:\/?#\[\]@!$&'\(\)*\+,;=]+.[a-z0-9\/]/i,
   },
-  owner: {
+  nameRu: {
+    type: String,
+    required: true,
+  },
+  nameEn: {
     type: String,
     required: true,
   },
@@ -48,11 +52,7 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  nameRu: {
-    type: String,
-    required: true,
-  },
-  nameEn: {
+  owner: {
     type: String,
     required: true,
   },
