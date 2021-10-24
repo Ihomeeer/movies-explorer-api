@@ -1,5 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
+  'http://ihomeer-movies.nomoredomains.monster',
+  'https://ihomeer-movies.nomoredomains.monster',
   'http://localhost:3000',
   'https://localhost:3000',
   'http://localhost:3001',
