@@ -19,8 +19,10 @@ ____
 
 ____
 ## Домен сервера
+
 api.ihomeer-movies.nomoredomains.monster
 
 ____
 ## Публичный IP-адрес
+
 178.154.197.61
