@@ -1,5 +1,6 @@
 // схема для экземпляра фильма
 const mongoose = require('mongoose');
+const isURL = require('validator/lib/isURL');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -25,26 +26,32 @@ const movieSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
-    // eslint-disable-next-line
-    match: /https?:\/\/(www.)?[a-z0-9\-\._~:\/?#\[\]@!$&'\(\)*\+,;=]+.[a-z0-9\/]/i,
+    validate: {
+      validator: (v) => isURL(v, { protocols: ['http', 'https', 'ftp'], require_tld: true, require_protocol: true }),
+      message: 'Неверный формат URL',
+    },
   },
   trailer: {
     type: String,
     required: true,
-    // eslint-disable-next-line
-    match: /https?:\/\/(www.)?[a-z0-9\-\._~:\/?#\[\]@!$&'\(\)*\+,;=]+.[a-z0-9\/]/i,
+    validate: {
+      validator: (v) => isURL(v, { protocols: ['http', 'https', 'ftp'], require_tld: true, require_protocol: true }),
+      message: 'Неверный формат URL',
+    },
   },
   thumbnail: {
     type: String,
     required: true,
-    // eslint-disable-next-line
-    match: /https?:\/\/(www.)?[a-z0-9\-\._~:\/?#\[\]@!$&'\(\)*\+,;=]+.[a-z0-9\/]/i,
+    validate: {
+      validator: (v) => isURL(v, { protocols: ['http', 'https', 'ftp'], require_tld: true, require_protocol: true }),
+      message: 'Неверный формат URL',
+    },
   },
-  nameRu: {
+  nameRU: {
     type: String,
     required: true,
   },
-  nameEn: {
+  nameEN: {
     type: String,
     required: true,
   },

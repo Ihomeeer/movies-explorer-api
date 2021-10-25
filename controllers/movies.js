@@ -2,12 +2,7 @@ const Movie = require('../models/movie');
 const NotFoundError = require('../errors/NotFound');
 const BadRequestError = require('../errors/BadRequest');
 const ForbiddenError = require('../errors/Forbidden');
-
-const errorCodes = {
-  NOT_FOUND: 404,
-  BAD_REQUEST: 400,
-  FORBIDDEN: 403,
-};
+const errorCodes = require('../utils/errorСodes');
 
 // Получить все фильмы из сохраненок
 const getAllMovies = (req, res, next) => {
@@ -29,8 +24,8 @@ const createMovie = (req, res, next) => {
     image,
     trailer,
     thumbnail,
-    nameRu,
-    nameEn,
+    nameRU,
+    nameEN,
     movieId,
   } = req.body;
   const owner = req.user._id;
@@ -43,8 +38,8 @@ const createMovie = (req, res, next) => {
     image,
     trailer,
     thumbnail,
-    nameRu,
-    nameEn,
+    nameRU,
+    nameEN,
     movieId,
     owner,
   })
@@ -77,11 +72,7 @@ const deleteMovie = (req, res, next) => {
       }
     })
     .catch((err) => {
-      if (err.statuscode === errorCodes.FORBIDDEN) {
-        next(err);
-      } else if (err.statusCode === errorCodes.NOT_FOUND) {
-        next(err);
-      } else if (err.statusCode === errorCodes.BAD_REQUEST) {
+      if (err.statusCode === errorCodes.BAD_REQUEST) {
         next(new BadRequestError('Ошибка в формате id фильма'));
       } else {
         next(err);
