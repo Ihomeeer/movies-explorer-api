@@ -41,11 +41,7 @@ const getUserInfo = (req, res, next) => {
       res.status(200).send({ data: user });
     })
     .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new BadRequestError('Ошибка в формате id пользователя'));
-      } else {
-        next(err);
-      }
+      next(err);
     });
 };
 
