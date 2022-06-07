@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3003 } = process.env;
 // подключение express
 const app = express();
 // dotenv, чтобы файлы env использовать
